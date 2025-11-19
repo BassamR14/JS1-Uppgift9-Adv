@@ -1,0 +1,26 @@
+.lists {
+  display: flex;
+  margin: 10px;
+  justify-content: space-around;
+}
+
+.teamA {
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.teamB {
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.teamA-list,
+.teamB-list {
+  /* list-style-type: none; */
+  padding-left: 0;
+}
+
+li {
+  display: flex;
+  gap: 20px;
+}
