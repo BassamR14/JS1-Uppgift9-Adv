@@ -75,6 +75,10 @@ function addPlayers() {
     btnSpan.append(changePlayerNameBtn);
   }
 
+  if (nameSpan.innerText === "") {
+    nameSpan.innerText = "Unknown";
+  }
+
   function deleteItem() {
     //rather that choosing which list to delete from, its easier to delete the parent/ancestor which in this chase is li.
     deleteButton.closest("li").remove();
