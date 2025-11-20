@@ -91,7 +91,7 @@ function addPlayers() {
     //   : teamAList;
 
     // need to check if the fromlist contains the class teamA-list, if it does then the toList becomes teamB-list, if not then toList is teamA-list.
-    if ((toList = fromList.classList.contains("teamA-list"))) {
+    if (fromList.classList.contains("teamA-list")) {
       toList = teamBList;
     } else {
       toList = teamAList;
