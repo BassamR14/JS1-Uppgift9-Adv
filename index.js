@@ -114,13 +114,13 @@ function addPlayers() {
     let currentList = changeTeamBtn.closest("ul");
     console.log(currentList);
 
-    if (currentList === document.querySelector(".teamA-list")) {
+    if (currentList === teamAList) {
       if (teamBList.childNodes.length >= 5) {
         return;
       } else {
         teamBList.append(li);
       }
-    } else if (currentList === document.querySelector(".teamB-list")) {
+    } else if (currentList === teamBList) {
       if (teamAList.childNodes.length >= 5) {
         return;
       } else {
