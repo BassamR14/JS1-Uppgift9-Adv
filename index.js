@@ -88,26 +88,45 @@ function addPlayers() {
   deleteButton.addEventListener("click", deleteItem);
 
   function changeTeam() {
-    let li = changeTeamBtn.closest("li"); // the player <li>
-    let fromList = li.parentElement; // the current <ul>
-    // let toList = fromList.classList.contains("teamA-list")
-    //   ? teamBList
-    //   : teamAList;
+    //Alt 1
+    // let li = changeTeamBtn.closest("li"); // the player <li>
+    // let fromList = li.parentElement; // the current <ul>
+    // // let toList = fromList.classList.contains("teamA-list")
+    // //   ? teamBList
+    // //   : teamAList;
 
-    // need to check if the fromlist contains the class teamA-list, if it does then the toList becomes teamB-list, if not then toList is teamA-list.
-    if (fromList.classList.contains("teamA-list")) {
-      toList = teamBList;
-    } else {
-      toList = teamAList;
+    // // need to check if the fromlist contains the class teamA-list, if it does then the toList becomes teamB-list, if not then toList is teamA-list.
+    // if (fromList.classList.contains("teamA-list")) {
+    //   toList = teamBList;
+    // } else {
+    //   toList = teamAList;
+    // }
+
+    // // max 5 rule
+    // if (toList.childNodes.length >= 5) {
+    //   alert("This team already has 5 players!");
+    //   return;
+    // }
+
+    // toList.append(li);
+
+    // Alt 2 - my way
+    let currentList = changeTeamBtn.closest("ul");
+    console.log(currentList);
+
+    if (currentList === document.querySelector(".teamA-list")) {
+      if (teamBList.childNodes.length >= 5) {
+        return;
+      } else {
+        teamBList.append(li);
+      }
+    } else if (currentList === document.querySelector(".teamB-list")) {
+      if (teamAList.childNodes.length >= 5) {
+        return;
+      } else {
+        teamAList.append(li);
+      }
     }
-
-    // max 5 rule
-    if (toList.childNodes.length >= 5) {
-      alert("This team already has 5 players!");
-      return;
-    }
-
-    toList.append(li);
   }
 
   changeTeamBtn.addEventListener("click", changeTeam);
